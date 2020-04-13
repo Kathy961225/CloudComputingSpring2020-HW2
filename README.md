@@ -1,6 +1,9 @@
 # CloudComputingSpring2020-HW2
 CloudComputingSpring2020 Homework 2
 
+## Team Member:
+Mengqi Wu(mw4259), Yizhou Wang(yw4002), Haodong Zhang(hz2124), Xiaorong Rao(xr344)
+
 ## Create Rekognition Part
 ```bash
 aws rekognition create-collection --collection-id "gateCollection"
