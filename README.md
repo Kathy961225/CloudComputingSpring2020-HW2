@@ -12,9 +12,9 @@ aws rekognition create-stream-processor --name gate-StreamProcessor \
    --settings '{"FaceSearch":{"CollectionId":"gateCollection","FaceMatchThreshold":85.5}}'
 
 aws rekognition stop-stream-processor --name gate-StreamProcessor --region us-east-1
+```
 
-gst-launch-1.0 -v avfvideosrc ! videoconvert ! vtenc_h264_hw allow-frame-reordering=FALSE 
-   realtime=TRUE max-keyframe-interval=45 ! kvssink name=sink stream-name="KVS2" 
-   storage-size=512 access-key="AKIARPZU45MLBE7NL7M5" secret-key="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" 
-   aws-region="us-east-1" osxaudiosrc ! audioconvert ! avenc_aac ! queue ! sink.
+## Launch camera
+```python
+gst-launch-1.0 -v avfvideosrc ! videoconvert ! vtenc_h264_hw allow-frame-reordering=FALSE realtime=TRUE max-keyframe-interval=45 ! kvssink name=sink stream-name="KVS2" storage-size=512 access-key="AKIARPZU45MLBE7NL7M5" secret-key="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" aws-region="us-east-1" osxaudiosrc ! audioconvert ! avenc_aac ! queue ! sink.
 ```
